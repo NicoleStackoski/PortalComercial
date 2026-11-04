@@ -1,3 +1,4 @@
+
 @import "tailwindcss";
 
 @layer base {
@@ -12,9 +13,6 @@
   }
 }
 
-/* Background gradient matching the exact Mohawk Portal screenshot:
-   Medium slate-gray at top, smooth dark transition in middle, 
-   and rich warm red-burgundy gradient at the bottom */
 .portal-bg {
   background: 
     radial-gradient(ellipse 110% 50% at 85% 100%, rgba(140, 42, 52, 0.45) 0%, transparent 65%),
@@ -23,7 +21,6 @@
   background-attachment: fixed;
 }
 
-/* Custom scrollbar for drawer and modals */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
