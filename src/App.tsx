@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo } from 'react';
 import { Menu, Home, Search, X } from 'lucide-react';
 import { PORTAL_ITEMS, PortalItem } from './data/portalData';
@@ -10,7 +11,6 @@ export default function App() {
   const [selectedItem, setSelectedItem] = useState<PortalItem | null>(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  // Filter all portal items based on the search query
   const filteredItems = useMemo(() => {
     const q = searchQuery.toLowerCase().trim();
     if (!q) {
@@ -36,9 +36,7 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen w-full flex flex-col justify-between overflow-x-hidden portal-bg text-white font-['Lato',sans-serif]">
-      {/* Main Top Header */}
       <header className="relative z-10 w-full max-w-[1340px] mx-auto px-4 sm:px-8 pt-7 sm:pt-9 pb-3 flex items-center justify-between">
-        {/* Top Left: Mohawk Brasil Logo */}
         <button
           onClick={handleHomeClick}
           className="hover:opacity-95 active:scale-95 transition-transform text-left cursor-pointer focus:outline-none"
@@ -47,7 +45,6 @@ export default function App() {
           <MohawkLogoHeader />
         </button>
 
-        {/* Top Right: Hamburger menu & Home icon */}
         <div className="flex items-center gap-3 sm:gap-4 text-white">
           <button
             onClick={() => setIsDrawerOpen(true)}
@@ -68,7 +65,6 @@ export default function App() {
         </div>
       </header>
 
-      {/* Hero Title and Subtitle */}
       <main className="relative z-10 flex-1 w-full max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 pt-2 sm:pt-4 pb-12 flex flex-col items-center">
         <div className="text-center mb-5 sm:mb-7">
           <h1 className="text-[clamp(10px,3.2vw,14px)] sm:text-2xl md:text-[27px] font-medium tracking-[0.32em] text-white uppercase font-['Lato',sans-serif] leading-tight whitespace-nowrap sm:whitespace-normal">
@@ -79,7 +75,6 @@ export default function App() {
           </p>
         </div>
 
-        {/* Search Bar matching Screenshot 1 */}
         <div className="w-full max-w-[560px] mb-8 sm:mb-10 px-2">
           <div className="relative flex items-center">
             <input
@@ -113,7 +108,6 @@ export default function App() {
           )}
         </div>
 
-        {/* Grid of Cards matching Screenshot 1 */}
         <div className="w-full max-w-[1100px]">
           {filteredItems.length === 0 ? (
             <div className="w-full py-16 text-center bg-white/5 rounded-2xl border border-white/10 p-8">
@@ -144,14 +138,12 @@ export default function App() {
                   }}
                   aria-label={item.subtitle || item.title.replace('\n', ' ')}
                 >
-                  {/* Top-left Icon */}
                   <div className="flex items-start justify-start pt-0.5 pl-0.5">
                     <div className="transform group-hover:scale-105 transition-transform duration-200">
                       {renderCardIcon(item.iconName, 55)}
                     </div>
                   </div>
 
-                  {/* Bottom-left Title text */}
                   <div className="pb-0.5 pl-0.5 text-left">
                     <span className="block text-[10.5px] sm:text-[11.5px] font-bold text-[#2a2c30] leading-[1.2] tracking-[0.02em] uppercase whitespace-pre-line font-['Lato',sans-serif]">
                       {item.title}
@@ -164,18 +156,15 @@ export default function App() {
         </div>
       </main>
 
-      {/* Footer Brand Signatures matching Screenshot 1 */}
       <footer className="relative z-10 w-full py-8 mt-2">
         <FooterBrandsLockup />
       </footer>
 
-      {/* Modal Popup matching Screenshot 2 */}
       <CardModal
         item={selectedItem}
         onClose={() => setSelectedItem(null)}
       />
 
-      {/* Side Drawer matching Screenshot 3 */}
       <SideDrawer
         isOpen={isDrawerOpen}
         onClose={() => setIsDrawerOpen(false)}
