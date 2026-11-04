@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Stroke and color definitions matching the Mohawk design guidelines
+
 const STROKE_WIDTH = 1.7;
 const COLOR = '#23252a';
 
