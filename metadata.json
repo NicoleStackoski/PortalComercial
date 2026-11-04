@@ -1,0 +1,6 @@
+{
+  "name": "PortalComercial - Mohawk Brasil",
+  "description": "Portal Comercial Mohawk Brasil (Eliane, Decortiles, Elizabeth). Acessos rápidos, informações e manuais corporativos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
