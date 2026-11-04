@@ -148,7 +148,7 @@ export const CardModal: React.FC<CardModalProps> = ({ item, onClose }) => {
           )}
         </div>
 
-        {/* Primary Action Button (Red, prominent as in Screenshot 2) */}
+        {/* Primary Action Button */}
         <div className="flex flex-col gap-2.5">
           <button
             onClick={handleAccess}
