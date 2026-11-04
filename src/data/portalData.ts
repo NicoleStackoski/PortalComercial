@@ -279,8 +279,6 @@ export const PORTAL_ITEMS: PortalItem[] = [
 
 ];
 
-// In the default grid display shown in Screenshot 1, there are 19 active cards in the main grid
-// followed by 5 placeholders to complete the 4th row (6x4 = 24 items).
 export const MAIN_GRID_IDS = [
   'treinamentos',
   'projuris',
