@@ -8,7 +8,6 @@ interface CardModalProps {
   onClose: () => void;
 }
 
-
 const ICON_PATHS: Record<string, string> = {
   treinamentos: '/assets/icons/Treinamentos.png',
   projuris: '/assets/icons/Projuris.png',
@@ -69,7 +68,6 @@ export const renderCardIcon = (
   );
 };
 
-
 export const CardModal: React.FC<CardModalProps> = ({ item, onClose }) => {
   const [copied, setCopied] = React.useState(false);
 
@@ -104,7 +102,6 @@ export const CardModal: React.FC<CardModalProps> = ({ item, onClose }) => {
         className="relative w-full max-w-[390px] sm:max-w-[420px] bg-white text-zinc-800 rounded-3xl p-7 sm:p-9 shadow-2xl transition-all transform scale-100 animate-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 p-2 text-zinc-400 hover:text-zinc-700 hover:bg-zinc-100 rounded-full transition-colors"
@@ -113,7 +110,6 @@ export const CardModal: React.FC<CardModalProps> = ({ item, onClose }) => {
           <X size={20} />
         </button>
 
-        {/* Modal Header with Icon */}
         <div className="flex flex-col items-center text-center">
           <div className="mb-4 p-2.5 flex items-center justify-center min-h-[56px]">
             {renderCardIcon(item.iconName, 54)}
@@ -123,7 +119,6 @@ export const CardModal: React.FC<CardModalProps> = ({ item, onClose }) => {
           </h2>
         </div>
 
-        {/* Section Divider & Guidance */}
         <div className="mt-6 mb-7">
           <div className="text-xs font-semibold tracking-wider text-zinc-500 uppercase border-b border-zinc-200 pb-2 mb-4">
             {item.sgieSectionTitle || 'INFORMAÇÕES DE ACESSO'}
@@ -148,7 +143,6 @@ export const CardModal: React.FC<CardModalProps> = ({ item, onClose }) => {
           )}
         </div>
 
-        {/* Primary Action Button */}
         <div className="flex flex-col gap-2.5">
           <button
             onClick={handleAccess}
@@ -158,7 +152,6 @@ export const CardModal: React.FC<CardModalProps> = ({ item, onClose }) => {
             <ExternalLink size={16} className="opacity-80 group-hover:translate-x-0.5 transition-transform" />
           </button>
 
-          {/* Copy link option */}
           <button
             onClick={handleCopyLink}
             className="w-full py-2 text-xs font-medium text-zinc-500 hover:text-zinc-800 flex items-center justify-center gap-1.5 transition-colors"
